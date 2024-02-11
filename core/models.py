@@ -23,3 +23,10 @@ class Author(models.Model):
 
     def __str__(self):
         return self.name
+
+
+__all__ = [
+    "Author",
+    "Post",
+    "Topic"
+]
