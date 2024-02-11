@@ -3,3 +3,5 @@ djangorestframework
 
 python-dotenv
 django-ckeditor # rich text editor for articles
+
+psycopg2-binary
