@@ -1,10 +1,14 @@
+from typing import List
+
 from rest_framework import serializers
 
 from core.models import Topic, Post, Author
 
 
 class TopicSerializer(serializers.ModelSerializer):
-    """Serializer for Topic object"""
+    """
+    Serializer for Topic object.
+    """
 
     class Meta:
         model = Topic
@@ -13,22 +17,37 @@ class TopicSerializer(serializers.ModelSerializer):
 
 
 class AuthorSerializer(serializers.ModelSerializer):
-    """Serializer for Author Object"""
+    """
+    Serializer for Author Object.
+
+    Methods:
+        get_posts: Retrieves all posts associated with the author.
+    """
 
     class Meta:
         model = Author
         fields = ('id', 'name', 'bio',)
-        read_only_fields = ('id', "posts")
+        read_only_fields = ('id', 'posts')
 
-    def get_posts(self, instance: Author):
-        posts = Post.objects.filter(author=instance)
-        serializer = PostSerializer(posts, many=True)
+    def get_posts(self, instance: Author) -> List[dict]:
+        """
+        Retrieves all posts associated with the author.
+
+        Args:
+            instance (Author): The author instance.
+
+        Returns:
+            list: List of serialized Post objects.
+        """
+        posts: List[Post] = Post.objects.filter(author=instance)
+        serializer: PostSerializer = PostSerializer(posts, many=True)
         return serializer.data
 
 
 class PostSerializer(serializers.ModelSerializer):
-    """Serializer for Post object"""
-
+    """
+    Serializer for Post object.
+    """
     author = serializers.PrimaryKeyRelatedField(queryset=Author.objects.all())
     topic = serializers.PrimaryKeyRelatedField(queryset=Topic.objects.all())
 
