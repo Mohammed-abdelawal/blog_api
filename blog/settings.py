@@ -78,7 +78,7 @@ REST_FRAMEWORK = {
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.contrib.gis.db.backends.postgis",
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         "HOST": os.getenv("DATABASE_HOST", "127.0.0.1"),
         "PORT": os.getenv("DATABASE_PORT", "5432"),
         "NAME": os.getenv("DATABASE_NAME", ""),
