@@ -17,11 +17,7 @@ class AuthorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Author
-        fields = ('id',
-                  'name',
-                  'bio',
-                  "posts",
-                  )
+        fields = ('id', 'name', 'bio',)
         read_only_fields = ('id', "posts")
 
     def get_posts(self, instance: Author):
@@ -33,10 +29,12 @@ class AuthorSerializer(serializers.ModelSerializer):
 class PostSerializer(serializers.ModelSerializer):
     """Serializer for Post object"""
 
-    author = AuthorSerializer(many=False, read_only=True)
-    topic = TopicSerializer()
+    author = serializers.PrimaryKeyRelatedField(queryset=Author.objects.all())
+    topic = serializers.PrimaryKeyRelatedField(queryset=Topic.objects.all())
+
+    pub_date = serializers.DateTimeField(read_only=True)
 
     class Meta:
         model = Post
-        fields = ('id', 'name', "title", "topic", "content", "author", "pub_date")
+        fields = ('id', "title", "topic", "content", "author", "pub_date", "author_id")
         read_only_fields = ('id',)
