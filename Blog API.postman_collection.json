@@ -1,0 +1,258 @@
+{
+  "info": {
+    "_postman_id": "bd3fef8d-12e9-4c9d-ab19-f699014d103d",
+    "name": "Blog API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+    "_exporter_id": "11427289"
+  },
+  "item": [
+    {
+      "name": "Author API",
+      "item": [
+        {
+          "name": "create Author",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token yourtoken",
+                "type": "text"
+              },
+              {
+                "key": "",
+                "value": "",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\" : \"Ahmed\",\n    \"bio\": \"Lawyer\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://127.0.0.1:8000/api/v1/authors/"
+          },
+          "response": []
+        },
+        {
+          "name": "edit Author with",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token yourtoken",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"mohamemd\",\n    \"bio\": \"software eng\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://127.0.0.1:8000/api/v1/authors/2/"
+          },
+          "response": []
+        },
+        {
+          "name": "delete author",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token yourtoken",
+                "type": "text"
+              }
+            ],
+            "url": "http://127.0.0.1:8000/api/v1/authors/1/"
+          },
+          "response": []
+        }
+      ],
+      "description": "API for Auther model"
+    },
+    {
+      "name": "Topic API",
+      "item": [
+        {
+          "name": "create Topic",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token yourtoken",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Technology\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://127.0.0.1:8000/api/v1/topics/"
+          },
+          "response": []
+        },
+        {
+          "name": "edit topic",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token youtoken",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"cars\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://127.0.0.1:8000/api/v1/topics/1/"
+          },
+          "response": []
+        },
+        {
+          "name": "delete topic",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token youtoken",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"cars\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://127.0.0.1:8000/api/v1/topics/1/"
+          },
+          "response": []
+        }
+      ],
+      "description": "this folder for apy related to topic"
+    },
+    {
+      "name": "Post API",
+      "item": [
+        {
+          "name": "create post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token yourtoken",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"how to\",\n    \"topic\": 2,\n    \"content\": \"<h2>Hi there</h2><p>&nbsp;</p><p>ii'' teach you how to go there</p>\",\n    \"author\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://127.0.0.1:8000/api/v1/posts/"
+          },
+          "response": []
+        },
+        {
+          "name": "edit post",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token yourtoken",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"how to\",\n    \"topic\": 3,\n    \"author\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://127.0.0.1:8000/api/v1/posts/1/"
+          },
+          "response": []
+        },
+        {
+          "name": "delete post",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token yourtoken",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://127.0.0.1:8000/api/v1/posts/1/"
+          },
+          "response": []
+        }
+      ],
+      "description": "this folder for api related to post"
+    },
+    {
+      "name": "generate token",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"your_username\",\n    \"password\": \"passw0rd\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://127.0.0.1:8000/api/token/"
+      },
+      "response": []
+    }
+  ]
+}
