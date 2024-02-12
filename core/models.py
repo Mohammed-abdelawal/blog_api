@@ -5,6 +5,9 @@ from django_ckeditor_5.fields import CKEditor5Field
 class Topic(models.Model):
     name = models.CharField(verbose_name="Title", max_length=200)
 
+    def __str__(self):
+        return self.name
+
 
 class Post(models.Model):
     title = models.CharField(verbose_name="Title", max_length=200)
