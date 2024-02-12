@@ -1,19 +1,18 @@
-# Project Name
+# Blog API
 
-Brief description of the project.
-
+Simple Blog API
 ## Setup Instructions
 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/project-name.git
+    git clone https://github.com/Mohammed-abdelawal/blog_api.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd project-name
+    cd blog_api
     ```
 
 3. Create a virtual environment (optional but recommended):
