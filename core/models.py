@@ -50,10 +50,21 @@ class Post(models.Model):
         pub_date (datetime.datetime): The date and time when the post was published.
     """
     title: str = models.CharField(verbose_name="Title", max_length=200)
-    topic: Topic = models.ForeignKey(verbose_name="Topic", to=Topic, on_delete=models.CASCADE)
+    topic: Topic = models.ForeignKey(
+        verbose_name="Topic",
+        to=Topic,
+        on_delete=models.CASCADE
+    )
     content: str = CKEditor5Field(verbose_name="Content")
-    author: Author = models.ForeignKey(verbose_name="Author", to="Author", on_delete=models.CASCADE)
-    pub_date: datetime.datetime = models.DateTimeField(verbose_name="Publish Date", auto_now_add=True)
+    author: Author = models.ForeignKey(
+        verbose_name="Author",
+        to="Author",
+        on_delete=models.CASCADE
+    )
+    pub_date: datetime.datetime = models.DateTimeField(
+        verbose_name="Publish Date",
+        auto_now_add=True
+    )
 
     def __str__(self) -> str:
         """

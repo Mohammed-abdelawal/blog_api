@@ -70,7 +70,7 @@ class PrivatePostApiTest(TestCase):
         payload = {
             "title": "how to",
             "topic": self.topic.id,
-            "content": "<h2>Hi there</h2><p>&nbsp;</p><p>ii'' teach you how to go there</p>",
+            "content": "<h2>Hi there</h2><p>&nbsp;</p><p> sample paragraph</p>",
             "author": self.author.id
         }
         res = self.client.post(POSTS_URL, payload)
